@@ -19,7 +19,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
-  <script src="https://kit.fontawesome.com/40c8f442b2.js" crossorigin="anonymous"></script>
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/dist/css/adminlte.min.css">
   <!-- SweetAlert2 -->
@@ -57,62 +56,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark text-sm">
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" data-widget="pushmenu" href="#" role="button" data-toggle="tooltip" title="Comprimir/Contraer menu izquierda"><i class="fas fa-bars"></i></a>
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?php $URL; ?>/sgac_reingenieria/index.php" role="button" data-toggle="tooltip" title="Inicio">
-            <i class="fa-sharp fa-solid fa-house"></i>
-          </a>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link"></a>
         </li>
       </ul>
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <li>
-          <a class="nav-link" id="darkModeButton" role="button" data-toggle="tooltip" title="Cambiar modo oscuro">
-            <i class="fa-solid fa-moon" id="darkModeIcon" ></i>
-          </a>
-          <script>
-            $(document).ready(function() {
-                // Evento click para el botón
-                $("#darkModeButton").click(function() {
-                    // Verifica si el cuerpo tiene la clase "dark-mode"
-                    if ($("body").hasClass("dark-mode")) {
-                        // Si tiene la clase, la quita y cambia la clase del icono
-                        $("body").removeClass("dark-mode");
-                        $("#darkModeIcon").removeClass("fa-sun").addClass("fa-moon");
-                        // Guarda el estado en el almacenamiento local
-                        localStorage.setItem("darkModeEnabled", "false");
-                    } else {
-                        // Si no tiene la clase, la agrega y cambia la clase del icono
-                        $("body").addClass("dark-mode");
-                        $("#darkModeIcon").removeClass("fa-moon").addClass("fa-sun");
-                        // Guarda el estado en el almacenamiento local
-                        localStorage.setItem("darkModeEnabled", "true");
-                    }
-                });
-
-                // Verifica si hay un estado guardado en el almacenamiento local
-                var darkModeEnabled = localStorage.getItem("darkModeEnabled");
-
-                // Si el modo oscuro estaba activado previamente, aplicarlo y cambiar la clase del icono
-                if (darkModeEnabled === "true") {
-                    $("body").addClass("dark-mode");
-                    $("#darkModeIcon").removeClass("fa-moon").addClass("fa-sun");
-                }
-            });
-          </script>
-        </li>
-
         <li class="nav-item">
-          <a class="nav-link" data-widget="fullscreen" href="#" role="button" data-toggle="tooltip" title="Pantalla completa">
+          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
             <i class="fas fa-expand-arrows-alt"></i>
           </a>
         </li>
+
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -143,7 +105,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="nav-item">
+               <li class="nav-item">
                 <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-users"></i>
                   <p>
@@ -189,9 +151,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                   </li>
                 </ul>
-            </li>
+              </li>
                         
-            <li class="nav-item">
+              <li class="nav-item">
                 <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-address-card"></i>
                   <p>
@@ -201,21 +163,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?php echo $URL; ?>/agenda/" class="nav-link">
+                    <a href="<?php echo $URL; ?>/roles/" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Agenda</p>
                     </a>
                   </li>
                   <li class="nav-item" id="agendaDevItem" style="display: none;">
-                    <a href="<?php echo $URL; ?>/agenda/agendaDev.php" class="nav-link">
+                    <a href="<?php echo $URL; ?>/roles/create.php" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Agenda Dev</p>
                     </a>
                   </li>
                 </ul>
-            </li>
+              </li>
+
             
-            <!-- <li class="nav-item">
+           <li class="nav-item">
                 <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-tags"></i>
                   <p>
@@ -231,7 +194,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                   </li>
                 </ul>
-            </li>            
+              </li>
+            
 
             <li class="nav-item">
               <a href="#" class="nav-link active">
@@ -256,6 +220,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </li>
               </ul>
             </li>
+
 
             <li class="nav-item">
               <a href="#" class="nav-link active">
@@ -299,6 +264,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </ul>
             </li>
 
+
             <li class="nav-item">
               <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-shopping-bag"></i>
@@ -321,7 +287,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </a>
                 </li>
               </ul>
-            </li> -->
+            </li>
 
             <li class="nav-item">
               <a href="#" class="nav-link" style="background-color: #ca0a0b" onclick="cerrarSesion()">
@@ -331,7 +297,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </p>
               </a>
             </li>
-
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

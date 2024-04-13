@@ -57,6 +57,7 @@
               //Funcionalidades del rol "admin"
               if (rolUsuario.rol == "admin") {
                 $("#agendaDevItem").show();
+                $("#uidColumn").show();
                 // Realiza acciones basadas en el rol de usuario finanzas
               } else if (rolUsuario.rol == "finanzas") {
                   // Si la pagina obtenida es distinta a ... y distinta a ...
@@ -72,6 +73,7 @@
                   }
                 //Realiza acciones basadas en el rol de usuario desarrollador
               } else if (rolUsuario.rol == "desarrollador") {
+                $("#uidColumn").hide();
                   // Si la pagina obtenida es distinta a ... y distinta a ...
                   if (
                     getPageName() == "finanzas" ||
