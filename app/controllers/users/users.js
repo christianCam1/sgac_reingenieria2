@@ -5,6 +5,10 @@ const iconoCopiar = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="
 const iconoMapaUnicacion = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/></svg>';
 const iconoPerros = '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><circle cx="4.5" cy="9.5" r="2.5"/><circle cx="9" cy="5.5" r="2.5"/><circle cx="15" cy="5.5" r="2.5"/><circle cx="19.5" cy="9.5" r="2.5"/><path d="M17.34 14.86c-.87-1.02-1.6-1.89-2.48-2.91-.46-.54-1.05-1.08-1.75-1.32-.11-.04-.22-.07-.33-.09-.25-.04-.52-.04-.78-.04s-.53 0-.79.05c-.11.02-.22.05-.33.09-.7.24-1.28.78-1.75 1.32-.87 1.02-1.6 1.89-2.48 2.91-1.31 1.31-2.92 2.76-2.62 4.79.29 1.02 1.02 2.03 2.33 2.32.73.15 3.06-.44 5.54-.44h.18c2.48 0 4.81.58 5.54.44 1.31-.29 2.04-1.31 2.33-2.32.31-2.04-1.3-3.49-2.61-4.8z"/></svg>';
 const iconoChat = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>';
+const iconoVenta = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16"><path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/></svg>'
+const iconoCompra = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16"><path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/><path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>';
+
+
 function busca_user_ultima() {
 
     // Configuracion de tipo de ordenamiento absoluto para ciertos valores
@@ -24,32 +28,32 @@ function busca_user_ultima() {
         responsive: true,
         layout: {
             top1Start: {
-                 buttons: [{
-                     extend: 'collection',
-                     text: 'Reportes',
-                     orientation: 'landscape',
-                         buttons: [
-                             {
-                             text: 'Copiar',
-                             extend: 'copy',
-                             },{
-                                 extend: 'pdf'
-                             },{
-                             extend: 'csv'
-                             },{
-                             extend: 'excel'
-                             },{
-                             text: 'Imprimir',
-                             extend: 'print'
-                             }
-                         ]
-                     },
-                         {
-                             extend: 'colvis',
-                             text: 'Visor de columnas',
-                             collectionLayout: 'three-column'
-                         }
-                 ]
+                buttons: [{
+                    extend: 'collection',
+                    text: 'Reportes',
+                    orientation: 'landscape',
+                    buttons: [
+                        {
+                            text: 'Copiar',
+                            extend: 'copy',
+                        }, {
+                            extend: 'pdf'
+                        }, {
+                            extend: 'csv'
+                        }, {
+                            extend: 'excel'
+                        }, {
+                            text: 'Imprimir',
+                            extend: 'print'
+                        }
+                    ]
+                },
+                {
+                    extend: 'colvis',
+                    text: 'Visor de columnas',
+                    collectionLayout: 'three-column'
+                }
+                ]
             }
         },
         columnDefs: [
@@ -172,18 +176,18 @@ function busca_user_ultima() {
             var fcompras = "Sin dato"
 
             //Asigna los valores obtenidos de property a la variable d y a sus correspondientes valores
-            if (d["uid"] == undefined || d["uid"] == "") { 
-                uid = "SR : " + d; 
-                copiarUid = "SR : " + d; 
+            if (d["uid"] == undefined || d["uid"] == "") {
+                uid = "SR : " + d;
+                copiarUid = "SR : " + d;
             } else {
-                uid = d.uid; copiarUid = '<button class="btn btn-outline-info btn-lg btn-block" onclick="copyToClipboard(\'' + d["uid"] + '\')" data-toggle="tooltip" title="Copiar UID">'+iconoCopiar+'</button>';
-                perros = '<button class="btn btn-warning btn-sm" onclick="busca_perros(\'' + d["uid"] + '\')" data-toggle="tooltip" title="Ver perros">'+iconoPerros+'</button>'
-                fcompras = '<button class="custom-button" onclick="verFCompras(\'' + d["uid"] + '\')">Ver</button>';
+                uid = d.uid; copiarUid = '<button class="btn btn-outline-info btn-lg" onclick="copyToClipboard(\'' + d["uid"] + '\')" data-toggle="tooltip" title="Copiar UID">' + iconoCopiar + '</button>';
+                perros = '<button class="btn btn-warning" onclick="busca_perros(\'' + d["uid"] + '\')" data-toggle="tooltip" title="Ver perros">' + iconoPerros + '</button>'
+                fcompras = '<button class="btn btn-success" onclick="verFCompras(\'' + d["uid"] + '\')" data-toggle="tooltip" title="Ver compras">'+iconoCompra+'</button>';
             }
 
-            if (d["direccion"] != undefined) { direccion = d["direccion"] + '<button class="btn btn-block bg-gradient-warning btn-lg" onclick="verDireccion(\'' + d["latitud"] + '\',\'' + d["longitud"] + '\')" data-toggle="tooltip" title="Ver direccion">'+iconoMapaUnicacion+'</button>' }
-            
-            if (nombre != "" && nombre != undefined && d.telefono1 != "" && d.telefono1 != undefined) { generar_paseo = '<button class="custom-button" onclick="generar_paseos(\'' + uid + '\',\'' + d["telefono1"] + '\',\'' + nombre + '\')">Realizar venta </button>' }
+            if (d["direccion"] != undefined) { direccion = d["direccion"] + '<button class="btn btn-block bg-gradient-warning" onclick="verDireccion(\'' + d["latitud"] + '\',\'' + d["longitud"] + '\')" data-toggle="tooltip" title="Ver direccion">' + iconoMapaUnicacion + '</button>' }
+
+            if (nombre != "" && nombre != undefined && d.telefono1 != "" && d.telefono1 != undefined) { generar_paseo = '<button class="btn bg-secondary" onclick="generar_paseos(\'' + uid + '\',\'' + d["telefono1"] + '\',\'' + nombre + '\')" data-toggle="tooltip" title="Realizar venta">'+iconoVenta+'</button>' }
 
             if (d["ultima_vez"] != undefined) {
                 fecha_ultima_vez = new Date(d["ultima_vez"]);
@@ -196,7 +200,7 @@ function busca_user_ultima() {
                 fecha_registro = new Date(d["creation_date"]);
                 fecha_registro = fecha_registro.toLocaleDateString(lang, options)
                 registro = d["creation_date"]
-            } 
+            }
 
             if (d["through"] != undefined) { through = d["through"] }
 
@@ -208,22 +212,22 @@ function busca_user_ultima() {
 
             // Array con los valores correspondientes a los datos del usuario
             var informacionUsuarios = [
-                    nombre,
-                    uid,
-                    copiarUid,
-                    email,
-                    telefono1,
-                    telefono2,
-                    direccion,
-                    fecha_ultima_vez,
-                    ultima_vez,
-                    fecha_registro,
-                    registro,
-                    through,
-                    perros,
-                    generar_paseo,
-                    '<button class="btn bg-info" onclick="ver_chat(\'' + uid + '\')">'+iconoChat+'</button>',
-                    fcompras
+                nombre,
+                uid,
+                copiarUid,
+                email,
+                telefono1,
+                telefono2,
+                direccion,
+                fecha_ultima_vez,
+                ultima_vez,
+                fecha_registro,
+                registro,
+                through,
+                perros,
+                generar_paseo,
+                '<button class="btn bg-info" onclick="ver_chat(\'' + uid + '\')">' + iconoChat + '</button>',
+                fcompras
             ]
             // Se añade la fila a la dataTable
             tabla.rows.add([informacionUsuarios]);
@@ -245,7 +249,7 @@ function busca_user_ultima() {
 function ver_chat(uid) {
 
     // Abre una nueva ventana para visualizar el chat
-    window.open('chatCaminandog.html?uid=' + uid, '_blank');
+    window.open('otros/chatCaminandog.php?uid=' + uid, '_blank');
 
 
 }
@@ -270,7 +274,7 @@ function generar_paseos(uid, telefono, nombre) {
 function generar_compra_paseos() {
 
 
-    window.open('pedirPaseo.html?uid=' + idUsuarioModal + '&telefono=' + telefonoUsuarioModal + '&nombre=' + nombreUsuarioModal, '_blank');
+    window.open('pedirPaseo.php?uid=' + idUsuarioModal + '&telefono=' + telefonoUsuarioModal + '&nombre=' + nombreUsuarioModal, '_blank');
 
 }
 
@@ -278,7 +282,7 @@ function generar_compra_paseos() {
 function generar_compra_placas() {
 
 
-    window.open('compraPlaca.html?uid=' + idUsuarioModal + '&telefono=' + telefonoUsuarioModal + '&nombre=' + nombreUsuarioModal, '_blank');
+    window.open('compraPlaca.php?uid=' + idUsuarioModal + '&telefono=' + telefonoUsuarioModal + '&nombre=' + nombreUsuarioModal, '_blank');
 
 }
 
@@ -287,14 +291,14 @@ function generar_compra_placas() {
 function generar_compra_vigencia() {
 
 
-    window.open('compraVigencia.html?uid=' + idUsuarioModal + '&telefono=' + telefonoUsuarioModal + '&nombre=' + nombreUsuarioModal, '_blank');
+    window.open('compraVigencia.php?uid=' + idUsuarioModal + '&telefono=' + telefonoUsuarioModal + '&nombre=' + nombreUsuarioModal, '_blank');
 
 }
 
 
 function verFCompras(uid) {
 
-    window.open('comprasfinuser.html?uid=' + uid, '_blank');
+    window.open('comprasfinuser.php?uid=' + uid, '_blank');
 }
 
 
@@ -402,6 +406,7 @@ function hideUsersTable() {
 
 }
 
+//Funcion para ver y ocultar elementos de la tabla
 function showUsersTable() {
 
     $("#tablaDatos").show();
