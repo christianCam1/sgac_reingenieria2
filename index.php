@@ -10,7 +10,7 @@ include('layout/parte1.php');
       <div class="row mb-2">
         <div class="col-sm-12">
           <!-- Mensaje de bienvenida al sistema -->
-          <h1 class="m-0"><p id="user1"></p></p></h1> 
+          <h1 class="m-0"><p id="user1"></p></h1> 
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->

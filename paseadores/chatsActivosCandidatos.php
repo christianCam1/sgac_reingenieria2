@@ -10,7 +10,7 @@ include('../layout/parte1.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">Reporte de ventas</h1>
+                    <h1 class="m-0">Listado de chats activos</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -25,8 +25,7 @@ include('../layout/parte1.php');
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title" id="periodo"></h3>
+                        <div class="card-header">                            
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
                                         class="fas fa-minus"></i>
@@ -36,24 +35,23 @@ include('../layout/parte1.php');
                         </div>
 
                         <div class="card-body" style="display: block;">
-                            <label for="estatus">Estatus
-                                <select class="mdb-select md-form" id="comboEstatus">
-                                    <option value="Seleccionar...">Seleccionar...</option>
-                                    <option value="Validado">Validado</option>
-                                    <option value="Validar">Sin validar</option>
-                                </select>
-                            </label>
                             <div class="table table-responsive">
                                 <table id="tablaDatos" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th scope="col">UID</th>
                                             <th scope="col">Nombre</th>
-                                            <th scope="col">Descripción</th>
-                                            <th scope="col">Fecha</th>
-                                            <th scope="col">Fecha timestamp(Oculto)</th>
-                                            <th scope="col"> Validación</th>
-                                        </tr>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Telefono</th>
+                                            <th scope="col">Inicio conversación</th>
+                                            <th scope="col">IC (oculto)</th>
+                                            <th scope="col">Hora Ultimo mensaje</th>
+                                            <th scope="col">HUM (oculto)</th>
+                                            <th scope="col">Ultimo mensaje</th>
+                                            <th scope="col">En atención</th>
+                                            <th scope="col">Ver chat </th>
+                                         </tr>
+                                    </thead>
                                     </thead>
                                     <tbody id="tabla">
                                     </tbody>
@@ -69,6 +67,7 @@ include('../layout/parte1.php');
         </div><!-- /.container-fluid -->
     </div>
 
+
 </div>
 <!-- /.content -->
 </div>
@@ -76,6 +75,6 @@ include('../layout/parte1.php');
 
 <?php include('../layout/parte2.php'); ?>
 
-<script src="<?php echo $URL; ?>/app/controllers/users/reporteVentas.js"></script>
+<script src="<?php echo $URL; ?>/app/controllers/paseadores/chatsActivosCandidatos.js"></script>
 
 <!-- Page specific script -->

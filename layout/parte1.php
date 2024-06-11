@@ -15,7 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="login/favicon.png">
-    <title>CaminanDog</title>
+    <title>SGA CaminanDog</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -27,7 +27,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/dist/css/adminlte.min.css">
     <!-- SweetAlert2 -->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+    <link rel="stylesheet"
+        href="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet"
+        href="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/plugins/toastr/toastr.min.css">
     <!-- InputMask -->
     <script src="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/plugins/moment/moment.min.js"></script>
     <script src="<?php echo $URL; ?>/public/templates/AdminLTE-3.2.0/plugins/moment/locale/es-mx.js"></script>
@@ -159,9 +166,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-users"></i>
+                                <i class="fa-regular fa-calendar-days"></i>
+                                <p>
+                                    Agenda
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/agenda/" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Agenda</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item" id="agendaDevItem" style="display: none;">
+                                    <a href="<?php echo $URL; ?>/agenda/agendaDev.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Agenda Dev</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="fa-solid fa-user"></i>
                                 <p>
                                     Usuarios
                                     <i class="right fas fa-angle-left"></i>
@@ -193,13 +225,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?php echo $URL; ?>/usuarios" class="nav-link">
+                                    <a href="<?php echo $URL; ?>/usuarios/estatusVentas.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Estatus de ventas</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?php echo $URL; ?>/usuarios/create.php" class="nav-link">
+                                    <a href="<?php echo $URL; ?>/usuarios/contacto.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Contacto</p>
                                     </a>
@@ -209,135 +241,138 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <li class="nav-item">
                             <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-address-card"></i>
+                                <i class="fa-solid fa-dog"></i></i>
                                 <p>
-                                    Agenda
+                                    Paseadores
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="<?php echo $URL; ?>/agenda/" class="nav-link">
+                                    <a href="<?php echo $URL; ?>/paseadores" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Agenda</p>
+                                        <p>Lista de paseadores</p>
                                     </a>
                                 </li>
-                                <li class="nav-item" id="agendaDevItem" style="display: none;">
-                                    <a href="<?php echo $URL; ?>/agenda/agendaDev.php" class="nav-link">
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/paseadores/candidatos.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Agenda Dev</p>
+                                        <p>Candidatos</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/paseadores/chatsActivosCandidatos.php"
+                                        class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Chats Activos</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/paseadores/calificacionInterna.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Calificaciones Internas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/paseadores/altayBaja.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Alta y baja</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active">
+                                <i class="fa-solid fa-coins"></i>
+                                <p>
+                                    Finanzas
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/almacen" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Lista de productos</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/almacen/create.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Agregar productos</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
                         <!-- <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="nav-icon fas fa-tags"></i>
-                  <p>
-                    Categorias
-                    <i class="right fas fa-angle-left"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="<?php echo $URL; ?>/categorias" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Lista de categorias</p>
-                    </a>
-                  </li>
-                </ul>
-            </li>            
+                            <a href="#" class="nav-link active">
+                                <i class="fa-solid fa-shield-dog"></i>
+                                <p>
+                                    Recuperandog
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo $URL; ?>/proveedores" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Lista de proveedores</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li> -->
 
-            <li class="nav-item">
-              <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-box"></i>
-                <p>
-                  Almacen
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?php echo $URL; ?>/almacen" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Lista de productos</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?php echo $URL; ?>/almacen/create.php" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Agregar productos</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
+                        <!--
+                        <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-cart-plus"></i>
+                            <p>
+                            Compras
+                            <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                            <a href="<?php echo $URL; ?>/compras/" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Lista de compras</p>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                            <a href="<?php echo $URL; ?>/compras/create.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Agregar compras</p>
+                            </a>
+                            </li>
+                        </ul>
+                        </li>
 
-            <li class="nav-item">
-              <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-truck"></i>
-                <p>
-                  Proveedores
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?php echo $URL; ?>/proveedores" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Lista de proveedores</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-cart-plus"></i>
-                <p>
-                  Compras
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?php echo $URL; ?>/compras/" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Lista de compras</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?php echo $URL; ?>/compras/create.php" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Agregar compras</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-shopping-bag"></i>
-                <p>
-                  Ventas
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?php echo $URL; ?>/ventas" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Lista de ventas</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?php echo $URL; ?>/ventas/create.php" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Realizar venta</p>
-                  </a>
-                </li>
-              </ul>
-            </li> -->
+                        <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-shopping-bag"></i>
+                            <p>
+                            Ventas
+                            <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                            <a href="<?php echo $URL; ?>/ventas" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Lista de ventas</p>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                            <a href="<?php echo $URL; ?>/ventas/create.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Realizar venta</p>
+                            </a>
+                            </li>
+                        </ul>
+                        </li> -->
 
                         <li class="nav-item">
                             <a href="#" class="nav-link" style="background-color: #ca0a0b" onclick="cerrarSesion()">

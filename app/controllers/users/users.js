@@ -2,7 +2,7 @@ var idUsuarioModal = ""
 var telefonoUsuarioModal = ""
 var nombreUsuarioModal = ""
 const iconoCopiar = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/></svg>';
-const iconoMapaUnicacion = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/></svg>';
+const iconoMapaUbicacion = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/></svg>';
 const iconoPerros = '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><circle cx="4.5" cy="9.5" r="2.5"/><circle cx="9" cy="5.5" r="2.5"/><circle cx="15" cy="5.5" r="2.5"/><circle cx="19.5" cy="9.5" r="2.5"/><path d="M17.34 14.86c-.87-1.02-1.6-1.89-2.48-2.91-.46-.54-1.05-1.08-1.75-1.32-.11-.04-.22-.07-.33-.09-.25-.04-.52-.04-.78-.04s-.53 0-.79.05c-.11.02-.22.05-.33.09-.7.24-1.28.78-1.75 1.32-.87 1.02-1.6 1.89-2.48 2.91-1.31 1.31-2.92 2.76-2.62 4.79.29 1.02 1.02 2.03 2.33 2.32.73.15 3.06-.44 5.54-.44h.18c2.48 0 4.81.58 5.54.44 1.31-.29 2.04-1.31 2.33-2.32.31-2.04-1.3-3.49-2.61-4.8z"/></svg>';
 const iconoChat = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>';
 const iconoVenta = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16"><path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/></svg>'
@@ -26,36 +26,36 @@ function busca_user_ultima() {
         //Muestra oculta filtro
         info: true,
         responsive: true,
-        layout: {
-            top1Start: {
-                buttons: [{
-                    extend: 'collection',
-                    text: 'Reportes',
-                    orientation: 'landscape',
-                    buttons: [
-                        {
-                            text: 'Copiar',
-                            extend: 'copy',
-                        }, {
-                            extend: 'pdf'
-                        }, {
-                            extend: 'csv'
-                        }, {
-                            extend: 'excel'
-                        }, {
-                            text: 'Imprimir',
-                            extend: 'print'
-                        }
-                    ]
-                },
-                {
-                    extend: 'colvis',
-                    text: 'Visor de columnas',
-                    collectionLayout: 'three-column'
-                }
-                ]
-            }
-        },
+        // layout: {
+        //     top1Start: {
+        //         buttons: [{
+        //             extend: 'collection',
+        //             text: 'Reportes',
+        //             orientation: 'landscape',
+        //             buttons: [
+        //                 {
+        //                     text: 'Copiar',
+        //                     extend: 'copy',
+        //                 }, {
+        //                     extend: 'pdf'
+        //                 }, {
+        //                     extend: 'csv'
+        //                 }, {
+        //                     extend: 'excel'
+        //                 }, {
+        //                     text: 'Imprimir',
+        //                     extend: 'print'
+        //                 }
+        //             ]
+        //         },
+        //         {
+        //             extend: 'colvis',
+        //             text: 'Visor de columnas',
+        //             collectionLayout: 'three-column'
+        //         }
+        //         ]
+        //     }
+        // },
         columnDefs: [
             { "targets": [1], "visible": false },
             { "targets": [8], "visible": false },
@@ -69,10 +69,8 @@ function busca_user_ultima() {
             { "targets": 10, "type": nameType }
         ],
         "order": [[7, "desc"]],
-
         pageLength: 10,
         lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']],
-
         // Configuracion de idioma
         "language": {
             "sProcessing": "Procesando...",
@@ -182,12 +180,12 @@ function busca_user_ultima() {
             } else {
                 uid = d.uid; copiarUid = '<button class="btn btn-outline-info btn-lg" onclick="copyToClipboard(\'' + d["uid"] + '\')" data-toggle="tooltip" title="Copiar UID">' + iconoCopiar + '</button>';
                 perros = '<button class="btn btn-warning" onclick="busca_perros(\'' + d["uid"] + '\')" data-toggle="tooltip" title="Ver perros">' + iconoPerros + '</button>'
-                fcompras = '<button class="btn btn-success" onclick="verFCompras(\'' + d["uid"] + '\')" data-toggle="tooltip" title="Ver compras">'+iconoCompra+'</button>';
+                fcompras = '<button class="btn btn-success" onclick="verFCompras(\'' + d["uid"] + '\')" data-toggle="tooltip" title="Ver compras">' + iconoCompra + '</button>';
             }
 
-            if (d["direccion"] != undefined) { direccion = d["direccion"] + '<button class="btn btn-block bg-gradient-warning" onclick="verDireccion(\'' + d["latitud"] + '\',\'' + d["longitud"] + '\')" data-toggle="tooltip" title="Ver direccion">' + iconoMapaUnicacion + '</button>' }
+            if (d["direccion"] != undefined) { direccion = d["direccion"] + '<button class="btn btn-block bg-gradient-warning" onclick="verDireccion(\'' + d["latitud"] + '\',\'' + d["longitud"] + '\')" data-toggle="tooltip" title="Ver direccion">' + iconoMapaUbicacion + '</button>' }
 
-            if (nombre != "" && nombre != undefined && d.telefono1 != "" && d.telefono1 != undefined) { generar_paseo = '<button class="btn bg-secondary" onclick="generar_paseos(\'' + uid + '\',\'' + d["telefono1"] + '\',\'' + nombre + '\')" data-toggle="tooltip" title="Realizar venta">'+iconoVenta+'</button>' }
+            if (nombre != "" && nombre != undefined && d.telefono1 != "" && d.telefono1 != undefined) { generar_paseo = '<button class="btn bg-secondary" onclick="generar_paseos(\'' + uid + '\',\'' + d["telefono1"] + '\',\'' + nombre + '\')" data-toggle="tooltip" title="Realizar venta">' + iconoVenta + '</button>' }
 
             if (d["ultima_vez"] != undefined) {
                 fecha_ultima_vez = new Date(d["ultima_vez"]);
@@ -249,7 +247,7 @@ function busca_user_ultima() {
 function ver_chat(uid) {
 
     // Abre una nueva ventana para visualizar el chat
-    window.open('otros/chatCaminandog.php?uid=' + uid, '_blank');
+    window.open('chatCaminandog.php?uid=' + uid, '_blank');
 
 
 }

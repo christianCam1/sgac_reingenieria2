@@ -11,7 +11,7 @@ include('../layout/parte1.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">Chat de Usuario</h1>
+                    <h1 class="m-0">Chat de Candidato</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -27,7 +27,7 @@ include('../layout/parte1.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <!-- <div class="card-header">
-                            <h3 class="card-title">Información y chat con el usuario</h3>
+                            <h3 class="card-title">Información y chat con el candidato</h3>
                             <div class="card-tools"> -->
                                 <!-- <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
                                         class="fas fa-minus"></i>
@@ -36,12 +36,14 @@ include('../layout/parte1.php');
                         </div> -->
 
                         <div class="card-body" style="display: block;">
+                            <!--     -->
+
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="card card-primary card-outline">
                                         <div class="card-body box-profile">
                                             <div class="text-center">
-                                                <img class="profile-user-img img-circle" id="img_usu"
+                                                <img class="profile-user-img img-fluid img-circle" id="img_usu"
                                                     alt="User profile picture">
                                             </div>
                                             <h3 class="profile-username text-center" id="nom_usu"></h3>
@@ -55,6 +57,8 @@ include('../layout/parte1.php');
                                                     <H6 class="float-right" id="tel_usu"></H6>
                                                 </li>
                                             </ul>
+                                            <a class="btn btn-info btn-block" id="verinfo"
+                                                onclick="verinformacioncandidato()"><b>Ver información del candidato</b></a>
                                             <a class="btn btn-info btn-block" id="cambiarA" data-toggle="modal"
                                                 data-target="#myModal"><b>Cambiar Atención</b></a>
                                             <a class="btn btn-danger btn-block" id="siguiente"
@@ -141,6 +145,7 @@ include('../layout/parte1.php');
                                             <button type="button" class="btn btn-primary"
                                                 onclick="cambiarAtencion()">Guardar</button>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -160,6 +165,6 @@ include('../layout/parte1.php');
 
 <?php include('../layout/parte2.php'); ?>
 
-<script src="<?php echo $URL; ?>/app/controllers/users/chatCaminandog.js"></script>
+<script src="<?php echo $URL; ?>/app/controllers/paseadores/chatCaminandogCandidato.js"></script>
 
 <!-- Page specific script -->
