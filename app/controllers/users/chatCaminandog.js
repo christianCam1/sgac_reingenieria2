@@ -3,6 +3,8 @@ var order_id = getAllUrlParams().order_id;
 var primera = true
 var usuariosArray = [];
 
+var iconoUser = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/></svg>';
+
 let lang = 'es-US' // you may use user's computer language: navigator.language || navigator.userLanguage
 let options = { hour: "numeric", minute: "numeric" };
 
@@ -13,28 +15,23 @@ let options = { hour: "numeric", minute: "numeric" };
 
 var addMessage2 = firebase.functions().httpsCallable('System_chat_infoUser');
 addMessage2({ uid: uid, ord: order_id }).then(function (result) {
-
-
-    document.getElementById("loader").style.display = "none";
-
     console.log(result.data[0])
-
-
     document.getElementById('nom_usu').innerHTML = result.data[0].nombre + " " + result.data[0].apellido_Paterno + " " + result.data[0].apellido_Materno
     document.getElementById('email_usu').innerHTML = result.data[0].email
     document.getElementById('tel_usu').innerHTML = result.data[0].telefono1
 
     if (result.data[1] === null) {
-        document.getElementById("img_usu").src = 'img/user-profile-outline.svg'
+        document.getElementById("img_usu").src = '../public/img/user-profile.svg'
     } else {
         document.getElementById("img_usu").src = result.data[1]
     }
 
+    $("#usrChat").text("Chat con el usuario "+ result.data[0].nombre + " " + result.data[0].apellido_Paterno + " " + result.data[0].apellido_Materno);
 
-    document.getElementById("mySection").classList.add("animate-bottom");
-    document.getElementById("myInput").classList.add("animate-bottom");
-    document.getElementById("mySection").style.display = "block";
-    document.getElementById("myInput").style.display = "block";
+    //document.getElementById("mySection").classList.add("animate-bottom");
+    //document.getElementById("myInput").classList.add("animate-bottom");
+    //document.getElementById("mySection").style.display = "block";
+    //document.getElementById("myInput").style.display = "block";
 
 })
 

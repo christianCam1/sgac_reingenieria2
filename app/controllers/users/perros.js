@@ -148,7 +148,7 @@ function consulta_perros() {
 
                     } if (property != undefined) {
 
-                        uid = '<button class="btn btn-info btn-lg btn-block" id="btn_eliminar" onclick="copyToClipboard(\'' + property + '\')">' + iconoCopiar + " Copiar" + '</button>';
+                        uid = '<button class="btn btn-info btn-lg btn-block" onclick="copyToClipboard(\'' + property + '\')">' + iconoCopiar + " Copiar" + '</button>';
 
 
                     }

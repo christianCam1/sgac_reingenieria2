@@ -12,7 +12,7 @@ include ('../layout/parte1.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">Listado de ususarios</h1>
+                    <h1 class="m-0">Dirección del usuario</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -27,7 +27,7 @@ include ('../layout/parte1.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Dirección Usuario</h3>
+                            <h3 class="card-title">Mapa de ubicacion de dirección del usuario</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                                 </button>
@@ -465,6 +465,6 @@ include ('../layout/parte1.php');
 
       });
     }
-  </script>
+</script>
 
 

@@ -10,7 +10,7 @@ include('../layout/parte1.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">Reporte de ventas</h1>
+                    <h1 class="m-0">Estatus de ventas de vendededores</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -76,6 +76,6 @@ include('../layout/parte1.php');
 
 <?php include('../layout/parte2.php'); ?>
 
-<script src="<?php echo $URL; ?>/app/controllers/users/reporteVentas.js"></script>
+<script src="<?php echo $URL; ?>/app/controllers/users/estatusVentas.js"></script>
 
 <!-- Page specific script -->

@@ -1,8 +1,17 @@
 var InformeCompras = [];
 
+
+
+
 function muestra_ventas(inicio, fin) {
+
+
+
+
+
     var db = firebase.database();
     var ref = db.ref("Contacto").child("compras");
+
 
     //con esta función recorre todos los datos almacenados en FB ordenados por mi child(tipo)
     var actual = 0;
@@ -11,18 +20,31 @@ function muestra_ventas(inicio, fin) {
     ref.orderByChild("timestamp").startAt(inicio).endAt(fin).once("value", function (snapshot) {
 
 
+
+
         var total = snapshot.numChildren();
+
+
         console.log("total", total)
+
+
 
         snapshot.forEach(function (data) {
 
+
             var d = data.val();
 
+
+
+
             actual = actual + 1;
+
+
 
             if (d.validacion == undefined) {
 
                 guardar(d.uid, d.nombre, d.detalleCompra, d.timestamp, actual, total, "", data.key);
+
 
             } else {
 
@@ -31,18 +53,35 @@ function muestra_ventas(inicio, fin) {
 
             }
 
+
+
+
+
         });
+
+
+
 
 
     });
 
 }
+
+
+
+
 comboEstatus.addEventListener("input", function (e) {
 
     var table = document.getElementById("tabla");
     table.innerHTML = "";
+
+
     var element = document.getElementById("comboEstatus");
     var estatusSeleccionado = element.options[element.selectedIndex].value;
+
+
+
+
     var oTable = $('#tablaDatos').DataTable();  //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said
 
     console.log(estatusSeleccionado);
@@ -53,12 +92,16 @@ comboEstatus.addEventListener("input", function (e) {
 
     } else {
 
+
+
         oTable.search(estatusSeleccionado).draw();
 
     }
 
 
 });
+
+
 
 function guardar(uid, nombre, detalle, timestamp, actual, total, validacion, childGuardar) {
 
@@ -82,7 +125,11 @@ function guardar(uid, nombre, detalle, timestamp, actual, total, validacion, chi
 
     }
 
+
+
 }
+
+
 
 
 function mostrar() {
@@ -153,6 +200,10 @@ function agregarPaginacion() {
 
 }
 
+
+
+
+
 function logArrayElements(d, index, array) {
 
     var table = document.getElementById("tabla");
@@ -172,10 +223,15 @@ function logArrayElements(d, index, array) {
 
     // asigna a las celdas el valir del Child especificado
     var date = new Date(d.timestamp);
+
+
     let lang = 'es-US' // you may use user's computer language: navigator.language || navigator.userLanguage
     let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: "numeric", minute: "numeric" };
 
+
     cell1.innerHTML = d.uid
+
+
     cell2.innerHTML = d.nombre;
     cell3.innerHTML = d.detalle
     cell4.innerHTML = date.toLocaleDateString(lang, options);
@@ -185,13 +241,18 @@ function logArrayElements(d, index, array) {
 
     if (d.validacion == "") {
 
-        cell6.innerHTML = '<button class="custom-button" onclick="verpaseos(\'' + d.key + '\')">Validar</button>';
+        cell6.innerHTML = 'Sin Validar';
+
+        row.style.backgroundColor = "#ffcccb";
 
     } else {
 
 
         cell6.innerHTML = "Validado"
+        row.style.backgroundColor = "#90EE90";
     }
+
+
 
 
 }
@@ -211,12 +272,14 @@ function verpaseos(key) {
 
     };
 
+
     ref.update((datosActualizar), function (error) {
 
 
         if (error) {
             // The write failed...
         } else {
+
 
             var table = document.getElementById("tabla");
             table.innerHTML = "";
@@ -234,6 +297,9 @@ function verpaseos(key) {
 
 
 }
+
+
+
 
 
 function getDate() {
@@ -258,20 +324,33 @@ function getDate() {
     var month = dateObj.getMonth() + 1; //months from 1-12
     var day = dateObj.getDate();
     var year = dateObj.getFullYear();
+
+
     var dateObjFin = new Date(hoy);
 
     dateObjFin.setDate(dateObjFin.getDate() - day);
 
+
     var monthFin = dateObjFin.getMonth() + 1; //months from 1-12
     var dayFin = dateObjFin.getDate();
     var yearFin = dateObjFin.getFullYear();
+
+
+
     var dateObjInicio = dateObjFin
 
+
     dateObjInicio.setDate(1);
+
 
     var monthInicio = dateObjInicio.getUTCMonth() + 1; //months from 1-12
     var dayInicio = dateObjInicio.getUTCDate();
     var yearInicio = dateObjInicio.getUTCFullYear();
+
+
+
+
+
     var datumInicio = new Date(yearInicio, (monthInicio - 1), day, '00', '00', '01');
     var inicio = datumInicio.getTime();
 
@@ -289,6 +368,10 @@ function getDate() {
     var dateIni = new Date(timestampini);
 
     console.log(dateIni.toLocaleDateString(lang, options));
+
+
+
+
     console.log(dateObj.toLocaleDateString(lang, options));
 
     document.getElementById("periodo").innerHTML = "Mostrando desde " + dateIni.toLocaleDateString(lang, options) + " ,Hasta: " + dateObj.toLocaleDateString(lang, options);
@@ -300,6 +383,14 @@ function getDate() {
 
 
 }
+
+
+
+
+
+
+
+
 window.onload = getDate();
 
 

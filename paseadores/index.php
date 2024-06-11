@@ -10,7 +10,7 @@ include('../layout/parte1.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">Reporte de ventas</h1>
+                    <h1 class="m-0">Listado de paseadores</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -26,7 +26,7 @@ include('../layout/parte1.php');
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title" id="periodo"></h3>
+                            <h3 class="card-title">Paseadores registrados</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
                                         class="fas fa-minus"></i>
@@ -36,24 +36,27 @@ include('../layout/parte1.php');
                         </div>
 
                         <div class="card-body" style="display: block;">
-                            <label for="estatus">Estatus
-                                <select class="mdb-select md-form" id="comboEstatus">
-                                    <option value="Seleccionar...">Seleccionar...</option>
-                                    <option value="Validado">Validado</option>
-                                    <option value="Validar">Sin validar</option>
-                                </select>
-                            </label>
                             <div class="table table-responsive">
                                 <table id="tablaDatos" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th scope="col">UID</th>
                                             <th scope="col">Nombre</th>
-                                            <th scope="col">Descripción</th>
-                                            <th scope="col">Fecha</th>
-                                            <th scope="col">Fecha timestamp(Oculto)</th>
-                                            <th scope="col"> Validación</th>
+                                            <th scope="col">UID (Hidden)</th>
+                                            <th scope="col">UID</th>
+                                            <th scope="col">Correo</th>
+                                            <th scope="col">Estatus</th>
+                                            <th scope="col">No.perros</th>
+                                            <th scope="col">Categoria</th>
+                                            <th scope="col">Celular</th>
+                                            <th scope="col">Telefono</th>
+                                            <th scope="col">Ultima vez</th>
+                                            <th scope="col">Ultima vez (timestamp) </th>
+                                            <th scope="col">Cierre</th>
+                                            <th scope="col">Cierre (timestamp)</th>
+                                            <th scope="col">Version</th>
+                                            <th scope="col">Perfil</th>
                                         </tr>
+                                    </thead>
                                     </thead>
                                     <tbody id="tabla">
                                     </tbody>
@@ -69,6 +72,7 @@ include('../layout/parte1.php');
         </div><!-- /.container-fluid -->
     </div>
 
+
 </div>
 <!-- /.content -->
 </div>
@@ -76,6 +80,6 @@ include('../layout/parte1.php');
 
 <?php include('../layout/parte2.php'); ?>
 
-<script src="<?php echo $URL; ?>/app/controllers/users/reporteVentas.js"></script>
+<script src="<?php echo $URL; ?>/app/controllers/paseadores/paseadores.js"></script>
 
 <!-- Page specific script -->
